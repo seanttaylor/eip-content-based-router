@@ -12,6 +12,8 @@ The answer is embodied in this architecture:
 ## Pattern Summary
 The Content-Based Router examines the message content and routes the message onto a different channel based on data contained in the message. The routing can be based on a number of criteria such as existence of fields, specific field values etc. 
 
+![Pattern diagram](./docs/eip-content-based-router-diagram.png)
+
 ## Implementation Diagram
 
 ![My implementation](https://placehold.it/400x400)
