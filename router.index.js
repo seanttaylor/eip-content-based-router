@@ -33,6 +33,20 @@ const kafkaDP = new KafkaDataPipe({
                     id: payload.id,
                     sequenceNo: payload.sequenceNo
                 });
+
+                if (payload.dietary_certifications.includes('Kosher')) {
+                    kafkaDP.put({ 
+                        topic: 'kosher', 
+                        message:JSON.stringify(payload)
+                    });
+                    return;
+                }
+
+                kafkaDP.put({ 
+                    topic: 'trefa', 
+                    message:JSON.stringify(payload)
+                });
+
             } catch(e) {
                 console.error(e);
             }
